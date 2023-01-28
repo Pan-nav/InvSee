@@ -20,10 +20,9 @@ public class InvSee implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-        if (!(sender instanceof Player)) return false;
+        if (!(sender instanceof Player player)) return false;
         if (args.length == 0) return false;
 
-        Player player = (Player) sender;
         if (!player.hasPermission("invsee.command")) {
             player.sendMessage(ChatColor.RED + "You don't have the permission invsee.command!");
             return false;
